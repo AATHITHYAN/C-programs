@@ -6,41 +6,34 @@ C#, VB, Swift, Pascal, Fortran, Haskell, Objective-C, Assembly, HTML, CSS, JS, S
 Code, Compile, Run and Debug online from anywhere in world.
 
 *******************************************************************************/
-
-//Arithmetic, Increment & Decrement Operators:
- 
 #include <stdio.h>
 
 int main()
 {
-  //Declaration & Initialization:
+  //Declaration Part:
   
-   int a = 1 , b=2, c=3, d=4, e, f, g, h;
-   
-  //Logic Applying
+    char a='a' , b='b', c;
+    int i=1, j=2, k;
+    double x=7.07, y;
   
-    //Logic:1 
+  //Logic performing Part:
+  
+    //Logic:1
     
-     e = a * b / c ;
-     
-     printf("e is : %d \n" , e);
-     
-    //Logic:2 
+      c = i == j ? a-1 : b+1 ;
+      
+      printf("The output for the above Logic is :%d \n",c);
+      
+    //Logic:2
+      
+      k = j % 3 == 0? i + 4 : x ;
+      
+      printf("The output for the above Logic is :%d \n",k);
     
-     f = a * b % c + 1 ;
-     
-     printf("f is : %d \n", f);
-     
     //Logic:3 
-    
-     g = ++a * b - c-- ;
      
-     printf("g is : %d \n", g);
-     
-    //Logic:4
-    
-     h = 7 - -b * ++d ;
-     
-     printf("h is : %d \n", h);
-     
+      y = j % 3 ? i+4 : x;
+      
+      printf("The output for the above Logic is : %lf   ",y);
+      
 }
