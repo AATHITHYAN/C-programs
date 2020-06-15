@@ -1,0 +1,26 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+void duplicate(int *arr,int size)
+{
+    int i;
+
+    for(i=0;i<size;i++)
+    {
+        arr[arr[i]%size]=arr[arr[i]%size]+size;
+    }
+
+    for(i=0;i<size;i++)
+    {
+        if(arr[i]>=size*2)
+            printf("%d ",i);
+    }
+}
+
+int main()
+{
+    int arr[]={0,1,2,3,4,5,6,7,3,2,0,1};
+    int size=sizeof(arr)/sizeof(arr[0]);
+
+    duplicate(arr,size);
+}
