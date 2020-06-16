@@ -1,0 +1,53 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void sort(int *arr,int size)
+{
+    int c1=0,c2=0,c3=0,i;
+
+    for(i=0;i<size;i++)
+    {
+        switch(arr[i])
+        {
+            case 0:
+            {
+                c1++;
+                break;
+            }
+            case 1:
+            {
+
+                c2++;
+                break;
+            }
+            case 2:
+            {
+                c3++;
+                break;
+            }
+        }
+    }
+
+    i=0;
+
+    while(c1--)
+        arr[i++]=0;
+
+    while(c2--)
+        arr[i++]=1;
+
+    while(c3--)
+        arr[i++]=2;
+
+    for(i=0;i<size;i++)
+        printf("%d",arr[i]);
+}
+
+int main()
+{
+    int arr[]={0,0,1,2,1,2,2,1,0};
+    int size=sizeof(arr)/sizeof(arr[0]);
+
+    sort(arr,size);
+    return 0;
+}
