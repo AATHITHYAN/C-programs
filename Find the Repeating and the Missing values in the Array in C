@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void calculate(int array[], int size)
+{
+    int i;
+
+    for(i=0;i<size;i++)
+    {
+        if(array[abs(array[i])-1]>0)
+            array[abs(array[i])-1]=-array[abs(array[i])-1];
+        else
+            printf("%d is repeated number \n ",abs(array[i]));
+    }
+
+    for(i=0;i<size;i++)
+    {
+        if(array[i]>0)
+            printf("%d is missing number",i+1);
+    }
+}
+
+int main()
+{
+    int array[]={7,3,7,7,2,1,2};
+
+    int size = sizeof(array)/sizeof(array[0]);
+
+    calculate(array, size);
+}
