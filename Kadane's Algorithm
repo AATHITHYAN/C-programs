@@ -1,0 +1,34 @@
+//Kadane's Algorithm:
+
+#include <stdio.h>
+#include <stdlib.h>
+
+void calculate(int array[], int size)
+{
+    int value, maxValue, index;
+    value = maxValue = 0;
+
+    for(index = 0; index < size; index++)
+    {
+        value = value + array[index];
+
+        if(value > maxValue)
+            maxValue = value;
+
+        if(value < 0)
+            value = 0;
+    }
+
+    printf("%d", maxValue);
+}
+
+int main()
+{
+    int array[] = {-2,-3,4,-1,-2,1,5,-3};
+
+    int size = sizeof(array)/sizeof(array[0]);
+
+    calculate(array, size);
+
+    return 0;
+}
