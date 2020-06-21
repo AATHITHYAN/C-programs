@@ -1,0 +1,95 @@
+//Set Matrix Zero in C
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+#define row 3
+#define col 3
+
+void calculate(int array[row][col])
+{
+    int rflag = false;
+    int cflag = false;
+
+    int i,j;
+
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            if(i==0 && array[i][j] == 0)
+                rflag = true;
+
+            if(j==0 && array[i][j] == 0)
+                cflag = true;
+
+            if(array[i][j] == 0)
+            {
+                array[0][j]= 0;
+                array[i][0]= 0;
+            }
+        }
+    }
+
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            if(array[0][j] == 0 || array[i][0] == 0)
+                array[i][j] = 0;
+        }
+    }
+
+    if(rflag == true)
+    {
+        for(i=0;i<row;i++)
+        {
+            for(j=0;j<col;j++)
+            {
+                array[0][i] = 0;
+            }
+        }
+    }
+
+    if(cflag == true)
+    {
+        for(i=0;i<row;i++)
+        {
+            for(j=0;j<col;j++)
+            {
+                array[i][0] = 0;
+            }
+        }
+    }
+}
+
+void print(int array[row][col])
+{
+    int i, j;
+
+    for(i=0;i<row;i++)
+    {
+        for(j=0;j<col;j++)
+        {
+            printf("%d",array[i][j]);
+        }
+        printf("\n");
+    }
+    printf("\n");
+}
+
+int main()
+{
+    int array[row][col]= { {1,1,1},
+                           {1,0,1},
+                           {1,1,1} };
+
+    print(array);
+
+    calculate(array);
+
+    print(array);
+    
+    return 0;
+}
