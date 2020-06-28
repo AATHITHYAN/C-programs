@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define N 50
+
+void calculate(int number)
+{
+    int reminder, i = 0,count = 0;
+    char array[N];
+
+    while(number>0)
+    {
+        reminder = number % 26;
+
+        if(reminder == 0)
+        {
+            array[i++] = 'Z';
+            number = (number / 26) - 1;
+            count++;
+        }
+
+        else
+        {
+            array[i++] = (reminder - 1) + 'A';
+            number = number / 26;
+            count++;
+        }
+    }
+
+    for(int j=count-1;j>=0;j--)
+        printf("%c",array[j]);
+}
+
+int main()
+{
+    int number;
+    scanf("%d",&number);
+
+    calculate(number);
+    return 0;
+}
