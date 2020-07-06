@@ -1,0 +1,25 @@
+//To find sum of two numbers without using any operator:
+
+#include <stdio.h> 
+  
+int main() 
+{ 
+    int number1 = 18, number2 = 5; 
+    if (number2 > 0) 
+    { 
+        while (number2 > 0) 
+        { 
+            number1++; 
+            number2--; 
+        } 
+    } 
+    if (number2 < 0)
+    {
+        while (number2 < 0) { 
+            number1--; 
+            number2++; 
+        } 
+    } 
+    printf("Sum of the two number is = %d", number1); 
+    return 0; 
+} 
