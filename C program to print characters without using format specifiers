@@ -1,0 +1,7 @@
+#include <stdio.h> 
+  
+int main() 
+{ 
+    printf("\x41\x41\x54\x48\x49\x54\x48\x59\x41\x4e"); 
+    return 0; 
+} 
